@@ -97,20 +97,19 @@ La ecuación se resuelve utilizando herramientas numéricas de Python mediante i
 
 ```
 .
-├── Codigo/
-│   ├── modelo_rotor.py
-│   ├── calculos_aerodinamicos.py
-│   └── simulacion_dinamica.py
-│
-├── Datos/
+├── datos/
 │   └── coeficientes_aerodinamicos/
 │
-├── Resultados/
+├── docs/
+│   └── PPS_DISEÑO_DINÁMICO_Y_AERODINÁMICO_DE_UN_ROTOR_DE_AUTOGIRO.pdf
+│
+├── resultados/
 │   ├── graficos/
 │   └── tablas/
 │
-├── Documentacion/
-│   └── Informe_PPS.pdf
+├── software/
+│   ├── calculo_beta.ipynb
+│   ├── calculo_de_sustentación.ipynb
 │
 └── README.md
 ```
