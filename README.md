@@ -23,33 +23,33 @@ Se busca desarrollar un modelo numérico para simular el comportamiento aerodin�
 
 # Objetivos específicos
 
-- Implementar un modelo basado en Blade Element Theory.
+- Implementar un modelo basado en Teoría de Elemento de Pala.
 - Calcular velocidades relativas, ángulos de ataque y coeficientes aerodinámicos.
 - Obtener fuerzas de sustentación y resistencia sobre cada elemento de pala.
 - Analizar el comportamiento durante descenso vertical y vuelo hacia adelante.
 - Modelar el fenómeno dinámico de batimiento del rotor.
 
 # Descripción técnica
-El script modela el comportamiento dinámico traduciendo las leyes de la aerodinámica bidimensional al espacio discreto de la pala[cite: 32]. En vuelo de avance, calcula la velocidad tangencial ($V_{Bl} = \Omega R \cdot r \pm V$) y la velocidad perpendicular ($w_{Bl}$) considerando el aporte de la velocidad inducida ($w_{Ri}$) y la tasa de cambio del batimiento ($\beta'$)[cite: 45, 46]. 
+El script modela el comportamiento dinámico traduciendo las leyes de la aerodinámica bidimensional al espacio discreto de la pala. En vuelo de avance, calcula la velocidad tangencial ($V_{Bl} = \Omega R \cdot r \pm V$) y la velocidad perpendicular ($w_{Bl}$) considerando el aporte de la velocidad inducida ($w_{Ri}$) y la tasa de cambio del batimiento ($\beta'$). 
 
 El núcleo del dinamismo radica en la resolución de la ecuación diferencial ordinaria no lineal de segundo orden:
 $$\beta'' + P(\psi)\beta' + Q(\psi)\beta = R(\psi)$$
-Donde $P(\psi)$ representa el amortiguamiento aerodinámico, $Q(\psi)$ la rigidez dinámica modificada por la fuerza centrífuga, y $R(\psi)$ las excitaciones armónicas aerodinámicas introducidas por la velocidad de traslación de la aeronave[cite: 61, 65]. Debido al carácter rígidamente acoplado (stiff) del sistema bajo ciertas velocidades, se seleccionó el método numérico adaptativo **LSODA**.
+Donde $P(\psi)$ representa el amortiguamiento aerodinámico, $Q(\psi)$ la rigidez dinámica modificada por la fuerza centrífuga, y $R(\psi)$ las excitaciones armónicas aerodinámicas introducidas por la velocidad de traslación de la aeronave. Debido al carácter rígidamente acoplado (stiff) del sistema bajo ciertas velocidades, se seleccionó el método numérico adaptativo **LSODA**.
 
 
 # Arquitectura del sistema
 
 ### Entradas (parámetros / señales):
-* Parámetros operativos: Velocidad de descenso ($V_{sink}$), velocidad de avance ($V$), velocidad de giro ($n_R$ en RPM)[cite: 22, 23, 45].
-* Geometría del rotor: Radio ($R$), cuerda ($c$), masa de pala ($m_P$), ángulo de paso ($\epsilon_{Bl}$)[cite: 17, 18, 27, 66].
+* Parámetros operativos: Velocidad de descenso ($V_{sink}$), velocidad de avance ($V$), velocidad de giro ($n_R$ en RPM).
+* Geometría del rotor: Radio ($R$), cuerda ($c$), masa de pala ($m_P$), ángulo de paso ($\epsilon_{Bl}$)].
 * Aerodinámica: Archivos de polares generados por XFoil para el perfil seleccionado.
 
 ### Procesamiento / Control:
-* Algoritmo iterativo en Python que recorre matricialmente los elementos de pala y las posiciones angulares del disco del rotor ($\psi$)[cite: 312, 68].
+* Algoritmo iterativo en Python que recorre matricialmente los elementos de pala y las posiciones angulares del disco del rotor ($\psi$).
 
 ### Salidas (señales / resultados):
-* Vectores de sustentación ($A_{Bl}$), arrastre ($W_{Bl}$) y momentos elementales ($M$)[cite: 30, 34].
-* Distribución temporal de la oscilación de batimiento $\beta(\psi)$[cite: 94].
+* Vectores de sustentación ($A_{Bl}$), arrastre ($W_{Bl}$) y momentos elementales ($M$).
+* Distribución temporal de la oscilación de batimiento $\beta(\psi)$.
 
 ---
 
@@ -58,7 +58,7 @@ Donde $P(\psi)$ representa el amortiguamiento aerodinámico, $Q(\psi)$ la rigide
 ### Requisitos previos
 * **Software:** Python 3.8 o superior.
 * **Librerías:** `numpy`, `scipy`, `matplotlib`.
-* **Herramientas externas:** XFoil (opcional, solo para regenerar polares personalizadas)[cite: 55].
+* **Herramientas externas:** XFoil (opcional, solo para regenerar polares personalizadas).
 
 ### Puesta en marcha
 
