@@ -3,6 +3,8 @@
 ### <p align="center"> Práctica Profesional Supervisada - Ingeniería Mecatrónica
 ### <p align="center"> Universidad Nacional de Lomas de Zamora
 
+<p align="center"> <img width="814" height="225" alt="image" src="https://github.com/user-attachments/assets/1b20a310-95c3-4436-a2dc-a868014db164" />
+
 ---
 
 ## Índice
@@ -99,5 +101,3 @@ Obtención de beta:
 # Autor
 
 ## <p align="center"> Alan Garrahan
-
-<p align="center"> <img width="814" height="225" alt="image" src="https://github.com/user-attachments/assets/1b20a310-95c3-4436-a2dc-a868014db164" />
